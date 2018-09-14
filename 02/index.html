@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>test</title>
+    </head>
+    <body>
+      <script>
+    //공부하는 겸해서 배열이용해봤습니다!
+       var a = 0;
+       var 짝 = [];
+       var 홀 = [];
+
+       //100까지 출력
+       for(var i=0; i <= 100; i++){
+        console.log(i);
+       }
+       //홀짝 출력
+
+        for(var i = 0; i <= 100; i++)
+        { 
+            if(i%2 == 0)
+            {
+            짝[a] = i;
+            }
+            else if(i%2 !== 0)
+            {
+            홀[a] = i;
+            }
+            a++;
+        }
+        console.log(짝);
+        console.log(홀);
+
+        for(i = 1; i <= 9; i++ )
+        {
+            for(j = 1; j <= 9; j++)
+            {
+                console.log(i + '*' + j +'='+ i*j)
+            }
+        }
+    </script>
+    </body>
+
+    
+</html>
