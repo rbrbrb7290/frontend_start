@@ -1,1 +1,3 @@
-#frontend_start
+## _welcome!_
+
+_프론트앤드 스터디 저장소 공간입니다._
