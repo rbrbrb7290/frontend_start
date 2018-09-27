@@ -10,7 +10,7 @@ for(let i = 1; i <= 4; i++) {
     }
 }
 
-// wrap.innerHTML = str;
+wrap.innerHTML = str;
 
 // var blocks = document.querySelectorAll('.wrap > div');
 
