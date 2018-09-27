@@ -24,7 +24,7 @@ for(let i = 1; i <= 4; i++) {
 // });
 function Change(event){
     console.log('Change');
-    blocks[i].style.backgroundColor = 'GREEN';
+    event.style.backgroundColor = 'GREEN';
 }
 wrap.innerHTML = str;
 var blocks = document.querySelectorAll(".wrap > div"); //selectorAll은 배열형태로 가져옴
