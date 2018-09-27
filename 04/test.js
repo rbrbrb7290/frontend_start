@@ -42,12 +42,16 @@ for(var i = 0; i < 16; i++) {
 // 클릭이벤트 함수
 function click(e) {
     var board = event.currentTarget;
-    console.log(className);
-    board.style.backgroundColor = "green";
+    console.log(board.className);
+    board.style.backgroundColor = "green"
 
-    if(className == 'black') 
-    { color = "black" }
-    else {color = 'white'}
+    if(board.className == 'black') 
+{color = "black";
+}
+else if(board.className = 'white')
+{ color = 'white';
+}
+
 }
 
 
