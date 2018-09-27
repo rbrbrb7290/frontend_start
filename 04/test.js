@@ -29,3 +29,49 @@ for(var i = 0; i < 16; i++){
 
 wrap.innerHTML = str;
 //HTML문서의 wrap요소에 접근해 str을 넣는 과정 
+
+var boards = document.querySelectorAll('.wrap > div');
+var selectedDom = null;
+
+for(var i = 0; i < 16; i++) {
+    console.log(boards[i]);
+    boards[i].addEventListener('click' , click)
+}
+
+function click(e) {
+    var board = event.currentTarget;
+    console.log('Click!!');
+    board.style.backgroundColor = "red";
+   
+}
+
+
+// boards.addEventLister('click', selectBoard, false)
+
+// function selectBoard(event) {
+//     alert("click!");
+// }
+  
+//     console.log('selected');
+
+//     var board = event.currentTarge;
+//     console.log(board);
+//     board.style.backgroundColor = 'yellow';
+// }
+
+//     for(var i =0; i < 16; i++) {
+//         console.log(boards[i]);
+//         boards[i].addEventListener('click', selectBoard);
+//     }
+   
+
+//     if(selectedDom){
+//         selectDom.className = selectedDom.className.replace(' select', '');
+//     }
+
+//     board.className += ' select';
+
+//     selectedDom = board; //선택된 보드를 Dom에 저장
+
+
+
