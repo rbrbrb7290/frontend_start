@@ -8,7 +8,19 @@ var isWhite = false;
 
 for(var i = 0; i < 16; i++){
 
-    str += '<div class = "black"></div>'; 
+    if(isWhite) {
+        className = 'white';
+    }
+    else{
+        className = 'black';
+    }
+
+    str += '<div class="'+ className +'"></div>';//white,black 클래스를 번갈아 넣음
+
+    //여기까지만하면 isWhite가 계속 false이기때문에 16개 칸이 white로됨
+    
+    isWhite = !isWhite; //조건문 else를 충족시키면서 white,black칸을 번갈아 형성
+
 }
 
 wrap.innerHTML = str;
