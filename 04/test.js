@@ -31,7 +31,7 @@ wrap.innerHTML = str;
 //HTML문서의 wrap요소에 접근해 str을 넣는 과정 
 
 var boards = document.querySelectorAll('.wrap > div'); //선택자 모두를 불러옴
-var selectedDom = null;
+var selectedDom;
 
 //모든 선택자(boards)에 click함수를 호출하는 클릭 이벤트를 추가)
 for(var i = 0; i < 16; i++) {
@@ -40,27 +40,25 @@ for(var i = 0; i < 16; i++) {
 }
 
 // 클릭이벤트 함수
-function click(e) {
+function click(event) {
     var board = event.currentTarget;
-    console.log(board.className);
-    board.style.backgroundColor = "green"
+    selectedDom = event.currentTarget;
+    board.style.backgroundColor = "green";
+   
+    
+    if(selectedDom == undefined){
+       selectedDom.style.backgroundColor = null;
+    }
+    
+    
+     //선택된 보드를 Dom에 저장
 
-    if(board.className == 'black') 
-{color = "black";
+
+
 }
-else if(board.className = 'white')
-{ color = 'white';
-}
-
-}
 
 
-    // if(selectedDom){
-    //     selectedDom.className = selectedDom.className.replace(' select', '');
-    // }
-    // board.className += ' select';
-    // selectedDom = board; //선택된 보드를 Dom에 저장
-
+   
 
 
    
