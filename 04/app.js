@@ -30,8 +30,8 @@ wrap.innerHTML = str;
 var blocks = document.querySelectorAll(".wrap > div"); //selectorAll은 배열형태로 가져옴
 for(var i = 0; i < 16; i++) {
     console.log(blocks[i]);
-    blocks[i].addEventListener('click' , Change){
+    blocks[i].addEventListener('click' , Change)
        
     }
-}
+
 
