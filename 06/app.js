@@ -1,8 +1,10 @@
 console.log('app')
-
+var pagesize;
+var query;
 var appkey = 'f3716205ee56e3a1b62c89ae7e5bffdd';
-var query = '가나';
-var url = `https://dapi.kakao.com/v2/search/web?query=${query}`
+var url = `https://dapi.kakao.com/v2/search/web?query=${query}`;
+var search = document.querySelector('.search');
+
 
 var myHeaders = new Headers();
 myHeaders.append('Authorization', 'KakaoAK f3716205ee56e3a1b62c89ae7e5bffdd');
@@ -12,8 +14,53 @@ var options = {
     headers : myHeaders
 };
 
-fetch(url, options).then(function(response){
-    response.json().then(function(data){
-      console.log('json data:',data);
+function print(json){
+  console.log( json );
+
+  var str = '';
+
+  for(var i=0; i < json.documents.length; i++){
+    var url =json.documents[i].url;
+    var title = json.documents[i].title;
+    var contents =json.documents[i].contents; //주소값
+    // str += '<a href="https://1boon.kakao.com/'+path+'">' + title + '</a><br>';
+    str += `<a href = ${url}>${title}</a><br>${contents}<br>`;
+    //여러개 문자들을 쓸필요없이 ` `를 써서 간단하게 쓸수있음
+  }
+
+  document.getElementById('wrap').innerHTML = str;
+}
+
+
+
+function getUrlData(query, options, callback) {
+  url = `https://dapi.kakao.com/v2/search/web?query=${query}&size=${pagesize}`;
+  fetch(url, options)
+    .then(function(response) {
+      response.json().then(function(data) {
+        // console.log('json data:', data);
+        callback(data)
+      });
+    })
+    .catch(function(err) {
+      console.log('Fetch Error :-S', err);//오류코드출력해줌 ex 404
     });
-  })
+}
+
+var button = document.querySelector('.btn');
+button.addEventListener('click', function(){
+  query = search.value;
+  console.log(query)
+  getUrlData(query,options, print)
+})
+function onKeyDown()
+{
+     if(event.keyCode == 13)
+     {
+      button.addEventListener('click', function(){
+        query = search.value;
+        console.log(query)
+        getUrlData(query,options, print)
+      })
+     }
+}
