@@ -31,5 +31,5 @@ function getUrlData(url, callback) {
       console.log('Fetch Error :-S', err);
     });
 }
-var button = document.querySelectorAll('more');
-button.addEventListener('click' , getUrlData)
+// var button = document.querySelectorAll('more');
+// button.addEventListener('click' , getUrlData)
