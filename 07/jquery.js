@@ -21,10 +21,11 @@ var $txt = $('#txt');
 var $debug = $('#debug');
 $('#btn').click(function(event){
     console.log('click');
-    if($txt.val() ==''){
-        alert('값을 넣어주세요')
-        return;
-    }
+    // if($txt.val() ==''){
+    //     alert('값을 넣어주세요')
+    //     return;
+    // }
 
-    $debug.html($txt.val());
+    // $debug.html($txt.val());
+    $('h1').hide('slow'); //fadeout()
 });
