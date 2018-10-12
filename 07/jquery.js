@@ -39,5 +39,6 @@ $('#btn').click(function(event){
     // $('h1').show('slow'); //fadeout()
 
     $('.wrap div').show('slow');
+    opacity =0;
     
 });
