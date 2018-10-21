@@ -1,0 +1,12 @@
+body {
+    margin: auto 0;
+}
+title {
+    font-family: rgba(255, 255 , 255 ,0);
+    font-size: 50pt;
+
+}
+
+.title input {
+    border-color: black;
+}

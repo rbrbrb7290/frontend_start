@@ -1,6 +1,6 @@
 console.log('app')
 var pagesize;
-var query;
+var query; 
 var appkey = 'f3716205ee56e3a1b62c89ae7e5bffdd';
 var url = `https://dapi.kakao.com/v2/search/web?query=${query}`;
 var search = document.querySelector('.search');
@@ -53,14 +53,16 @@ button.addEventListener('click', function(){
   console.log(query)
   getUrlData(query,options, print)
 })
+
+//enter키 입력함수  //엔터키 함수가 클릭이벤트 전에는 실행x ,클릭이벤트후에 엔터키함수가 console에서는 실행되는데 출력은 안되고있음
 function onKeyDown()
 {
      if(event.keyCode == 13)
      {
-      button.addEventListener('click', function(){
-        query = search.value;
-        console.log(query)
-        getUrlData(query,options, print)
-      })
+      // button.addEventListener('click', function(){
+      //   query = search.value;
+      //   console.log(query)
+      //   getUrlData(query,options, print)
+      // })
      }
 }
