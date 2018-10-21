@@ -1,8 +1,9 @@
 console.log('1boon');
-var count = 10;
-var url = `https://1boon.kakao.com/ch/enter.json?page=1&pagesize=${count}`;
 
-function print(json){
+var url = 'https://1boon.kakao.com/ch/enter.json?page=1&pagesize=10';
+
+
+getUrlData(url, function(json){
   console.log( json );
 
   var str = '';
@@ -10,15 +11,12 @@ function print(json){
   for(var i=0; i < json.data.length; i++){
 
     var title = json.data[i].title;
-    var path =json.data[i].path; //주소값
-    // str += '<a href="https://1boon.kakao.com/'+path+'">' + title + '</a><br>';
-    str += `<a href="https://1boon.kakao.com/${path}">${title}</a><br>`
-    //여러개 문자들을 쓸필요없이 ` `를 써서 간단하게 쓸수있음
+    var path =json.data[i].path; 
+    str += '<a href="https://1boon.kakao.com/'+path+'">' + title + '</a><br>';
   }
 
-  document.getElementById('wrap').innerHTML += str;
-}
-getUrlData(url, print)
+  document.getElementById('wrap').innerHTML = str;
+})
 
 
 function getUrlData(url, callback) {
@@ -30,17 +28,8 @@ function getUrlData(url, callback) {
       });
     })
     .catch(function(err) {
-      console.log('Fetch Error :-S', err);//오류코드출력해줌 ex 404
+      console.log('Fetch Error :-S', err);
     });
 }
- var button = document.getElementById('more');
- button.addEventListener('click' , function(){
- 
-  count += 3;
-  url = `https://1boon.kakao.com/ch/enter.json?page=1&pagesize=${count}`;
-  console.log(count)//count확인
-  
-
-  getUrlData(url, print)
-
- })
+var button = document.querySelectorAll('more');
+button.addEventListener('click' , getUrlData)
