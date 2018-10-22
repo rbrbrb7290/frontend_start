@@ -1,1 +1,68 @@
-.list{margin:10px; padding:10px}
+body {
+    
+}
+.container h1 {
+    display: block;
+    overflow: hidden;
+    width: 110px;
+    height: 50px;
+    font-size: 0;
+    line-height: 0;
+    background: url(//t1.daumcdn.net/media/img-media/1boon/pc/logo_1boon_170426.png) 0 -300px no-repeat;
+    text-indent: -9999px;
+    /* css출처:https://1boon.kakao.com에서 받아왔습니다! */
+}
+/* 탭 메뉴 */
+ul.nav {
+    margin: 0;
+    padding: 0;
+    float: left;
+    list-style: none;
+    height: 45px;
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+    width: 100%;
+    font-size:15px;
+    /* hover넣기 */
+}
+ul.nav li {
+    float: left;
+    text-align:center;
+    cursor: pointer;
+    width:82px;
+    height: 45px;
+    line-height: 31px;
+    border: 1px solid #eee;
+    border-left: none;
+    background: #fafafa;
+    overflow: hidden;
+    position: relative; 
+}
+ .nav a{ text-decoration:none; color:#000; }  
+
+/* box내용 */
+a:link { 
+    text-decoration:none;
+    color: inherit;
+}
+
+.list{
+    margin:10px;
+    padding:10px;
+}
+
+.glyphicon{
+    display:none;
+}
+
+div.box {
+    display:inline-block;
+    width: 260px;
+    margin: 15px 10px;
+    vertical-align: top;
+}
+
+div.box img {
+    max-width : 90%;
+    height: auto;
+}

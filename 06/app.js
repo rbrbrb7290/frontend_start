@@ -27,12 +27,8 @@ function print(json){
     str += `<a href = ${url}>${title}</a><br>${contents}<br>`;
     //여러개 문자들을 쓸필요없이 ` `를 써서 간단하게 쓸수있음
   }
-
   document.getElementById('wrap').innerHTML = str;
 }
-
-
-
 function getUrlData(query, options, callback) {
   url = `https://dapi.kakao.com/v2/search/web?query=${query}&size=${pagesize}`;
   fetch(url, options)

@@ -14,11 +14,8 @@ getUrlData(url, function(json){
     var path =json.data[i].path; 
     str += '<a href="https://1boon.kakao.com/'+path+'">' + title + '</a><br>';
   }
-
   document.getElementById('wrap').innerHTML = str;
 })
-
-
 function getUrlData(url, callback) {
   fetch(url)
     .then(function(response) {
@@ -31,5 +28,10 @@ function getUrlData(url, callback) {
       console.log('Fetch Error :-S', err);
     });
 }
-var button = document.querySelectorAll('more');
-button.addEventListener('click' , getUrlData)
+var button = document.querySelector('.btn');
+ button.addEventListener('click' , function(event){
+    count += 1;
+  url = `https://1boon.kakao.com/ch/enter.json?pagesize=10&page=${count}`;
+  console.log(count)//count확인
+  getUrlData(url, print, event.target.tagName)
+  })
