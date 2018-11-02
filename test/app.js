@@ -5,7 +5,7 @@ var url = `http://1boon.kakao.com/ch/trending.json?page=${page}&pagesize=${count
 var trending = document.getElementById('trending');
 var issue = document.getElementById('issue');
 var enter = document.getElementById('enter');
-var temp;
+var temp = '';
 
 
 
@@ -34,7 +34,7 @@ function print(json, event){
       // //로딩중 마크업의 display의 속성을 none으로 설정
      
       loading.style.display= "";
-      list.innerHTML += '';
+      loading.innerHTML += str;
 
 }
 function init() {
@@ -57,32 +57,34 @@ function getUrlData(url, callback, event) {
 /*트랜딩 탭 이벤트 */
 trending.addEventListener('click', trending_tab);
 function trending_tab(trending){
+  page =1;
   console.log('trending_road!');
   getUrlData(url = `http://1boon.kakao.com/ch/trending.json?page=1&pagesize=${count}`, print, trending);
   trending.className = 'active'
   issue.className = '';
   enter.className = '';
 
-  temp = trending;
+  temp = 'trending';
 
 }
 /*이슈 탭 이벤트 */
 issue.addEventListener('click', issue_tab);
 function issue_tab(issue){
+  page =1;
   console.log('issue_log!');
   
   getUrlData(url = `http://1boon.kakao.com/ch/issue.json?page=1&pagesize=${count}`, print, issue);
-
   trending.className = '';
   issue.className = 'active'
   enter.className = '';
 
-  temp = issue;
+  temp = 'issue';
   console.log(temp);
 }
 /*엔터 탭 이벤트 */
 enter.addEventListener('click', enter_tab);
 function enter_tab(enter){
+  page =1;
   console.log('enter_log!!')  
   getUrlData(url = `http://1boon.kakao.com/ch/enter.json?page=1&pagesize=${count}`, print, enter);
 
@@ -90,24 +92,24 @@ function enter_tab(enter){
   issue.className = '';
   enter.className = 'active'
 
-  temp = enter;
+  temp = 'enter';
   console.log(temp);
 }
 
  var button = document.querySelector('.btn');
  var loading = document.querySelector('.loading');
- button.addEventListener('click' , function(event){
-
-++page;
-url = `http://1boon.kakao.com/ch/trending.json?page=${page}&pagesize=${count}`;
-getUrlData(url, print, event.target.tagName)
-  // if(temp == trending) {
-  //   getUrlData(url =`http://1boon.kakao.com/ch/${temp}.json?page=1&pagesize=${count}`, print, event.target.tagName)
-  // } else if(temp == issue)  { 
-  //   getUrlData(url =`http://1boon.kakao.com/ch/${temp}.json?page=1&pagesize=${count}`, print, event.target.tagName)
-  // } else if(temp == enter) {
-  //   getUrlData(url =`http://1boon.kakao.com/ch/${temp}.json?page=1&pagesize=${count}`, print, event.target.tagName)
-  // }
+ button.addEventListener('click' , function(event) {
+   loading.style.display = 'block';
+  ++page;
+  url = `http://1boon.kakao.com/ch/trending.json?page=${page}&pagesize=${count}`;
+  getUrlData(url, print , event.target.tagName)
+  if(temp == 'trending') {
+    getUrlData(url =`http://1boon.kakao.com/ch/trending.json?page=${page}&pagesize=${count}`, print, event.target.tagName)
+  } else if(temp == 'issue')  { 
+    getUrlData(url =`http://1boon.kakao.com/ch/issue.json?page=${page}&pagesize=${count}`, print, event.target.tagName)
+  } else if(temp == 'enter') {
+    getUrlData(url =`http://1boon.kakao.com/ch/enter.json?page=${page}&pagesize=${count}`, print, event.target.tagName)
+  }
  })
 
 //  $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
