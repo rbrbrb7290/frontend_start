@@ -5,15 +5,16 @@ var $bug = document.querySelector('#bug');
 var $point = document.querySelector('#point')
 var $life = document.querySelector("#life");
 var point = 0;
-var life = 0;
+var life = 10;
 
-// function life() {
-//  life -= 1;
-//  $life.innerHTML = life;
-// }
-
+function life() {
+  console.log('box');
+ life -= 1;
+ $life.innerHTML = life;
+}
 
 function addpoint() {
+  console.log('bug');
   point +=1;
   $point.innerHTML = point;
 }
@@ -25,14 +26,20 @@ function move() {
 
   $bug.style.left = x + 'px';
   $bug.style.top = y + 'px';
-
 }
-function random(max) {
+function random(max) { //난수생성을해서 임의로 위치변경
   return Math.floor(Math.random() * max);
 }
+setInterval(move, 900);
 
-// box.addEventListener("click", life);
-$bug.addEventListener("click", addpoint);
+if(EventTarget == 'box')
+{
+  box.addEventListener("click", life);
+
+} else{
+
+  $bug.addEventListener("click", addpoint);
+}
 
 
-setInterval(move, 1000);
+

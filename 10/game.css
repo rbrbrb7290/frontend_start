@@ -1,4 +1,3 @@
-
 .box {
     border-width: 1px;
     border-style: solid;
@@ -8,6 +7,7 @@
     position: relative;
     overflow: hidden;
   }
+
   #bug {
     width:20px;
     height: 20px;
