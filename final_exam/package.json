@@ -1,0 +1,24 @@
+{
+  "name": "ggue_note",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "file-saver": "^2.0.0",
+    "screenfull": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbrbrb7290/frontend_start.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rbrbrb7290/frontend_start/issues"
+  },
+  "homepage": "https://github.com/rbrbrb7290/frontend_start#readme"
+}

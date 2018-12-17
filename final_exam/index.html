@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <title>My Note</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="header">  
+  <h1>My Note :)</h1>
+  <div class="menu">
+    <button class="btn-full">Full</button>
+  </div>
+</div>
+
+<div class= "about">자신이 목표하는 일이나,계획 등을 메모해서 ,저장하거나 내역들을 다운로드 할수있는 사이트입니다.<br>
+  <h3><a href= "https://github.com/rbrbrb7290/frontend_start.git" target="_blank">go to my git!</a></h3>
+</div>
+
+
+<div class="container">
+  <textarea id="memo" placeholder="메모를 입력해주세요!!"></textarea>
+  <button class="btn-newnote">새노트</button>
+  <button class="btn-savenote">노트저장</button>
+  <button class="btn_download">download</button>
+  <button class="btn-about">about</button>
+</div>
+
+
+<script src="js/app.js"></script>
+<script src="node_modules/screenfull/dist/screenfull.js"></script>
+<script src ="node_modules/file-saver/dist/FileSaver.min.js"></script>
+
+</body>
+</html>

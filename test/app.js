@@ -7,11 +7,8 @@ var issue = document.getElementById('issue');
 var enter = document.getElementById('enter');
 var temp = '';
 
-
-
 function print(json, event){
   //console.log(json);
-
   var str = ''; 
 
   for(var i=0; i < json.data.length; i++){
